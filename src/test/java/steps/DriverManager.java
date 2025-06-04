@@ -30,6 +30,7 @@ public class DriverManager {
                 options.addArguments("--disable-dev-shm-usage");
             }
             driver = new ChromeDriver(options);
+            driver = new ChromeDriver();
         } else if (execution.equalsIgnoreCase("remote")) {
             try {
                 DesiredCapabilities caps = new DesiredCapabilities();
