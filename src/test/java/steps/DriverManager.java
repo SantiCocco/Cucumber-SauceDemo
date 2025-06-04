@@ -2,6 +2,7 @@ package steps;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import utils.ConfigReader;
@@ -19,6 +20,16 @@ public class DriverManager {
         String execution = ConfigReader.get("execution");
 
         if (execution.equalsIgnoreCase("local")) {
+            ChromeOptions options = new ChromeOptions();
+
+            String headless = ConfigReader.get("headless");
+            if (headless.equalsIgnoreCase("true")) {
+                options.addArguments("--headless=new");
+                options.addArguments("--disable-gpu");
+                options.addArguments("--no-sandbox");
+                options.addArguments("--disable-dev-shm-usage");
+            }
+            driver = new ChromeDriver(options);
             driver = new ChromeDriver();
         } else if (execution.equalsIgnoreCase("remote")) {
             try {

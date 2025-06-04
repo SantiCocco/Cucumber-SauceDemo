@@ -1,0 +1,35 @@
+# Build folders and dependencies
+/target/
+/build/
+
+# Compiled Java files
+*.class
+
+# Packaged files
+*.jar
+*.war
+*.ear
+
+# Logs
+*.log
+
+# IDE configuration files
+.idea/
+*.iml
+.vscode/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Other temporary or backup files
+*.tmp
+*.bak
+
+# Maven files
+.settings/
+.mvn/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Generated reports (optional, if reports are generated outside target)
+/reports/
